@@ -1,0 +1,10 @@
+{% extends 'signin/base.html' %}
+{% block body_block %}
+    {% if user.is_authenticated %}
+        <h1>BOOK SLOT</h1>
+    {% else %}
+        <div class="jumbotron">
+            <h1>PLEASE LOGIN TO FILL THE FORM</h1>
+        </div>
+    {% endif %}
+{% endblock %}

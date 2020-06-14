@@ -1,0 +1,7 @@
+{% extends 'signin/base.html' %}
+{% block body_block %}
+    <div class = "jumbotron">
+        <h1>{{ msgs }}</h1>
+    </div>
+    <a href="{% url 'index' %}">GO TO HOMEPAGE</a>
+{% endblock %}

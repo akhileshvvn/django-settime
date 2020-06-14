@@ -1,0 +1,68 @@
+{% load socialaccount %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Slotbooking</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <style>
+        .jumbotron {
+            background-image: url("data:image/jpeg;base64,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");
+            background-size: cover;
+            from {background-position: 0 0;}
+            to {background-position: -180px 0px;}
+        }
+    </style>
+</head>
+
+<body>
+    <!--Navbar -->
+    <nav class="navbar navbar-default navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-translate">
+                <i class='fas fa-tv'></i>  SLOT BOOKING
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="{% url 'syat:fillform' %}" class="nav-link">
+                            <i class='fas fa-clock'></i>  SET AVAILABLE TIME
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'syat:book' %}" class="nav-link">
+                            <i class='far fa-calendar-alt'></i>  BOOK SLOT
+                        </a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="#pablo" class="btn btn-rose btn-raised btn-round " data-toggle="dropdown">
+                            Welcome, {{ user.username }} !
+                        </a>
+                    </li>
+
+                    {% else %}
+                    <li class="nav-item">
+                        <a href="{% provider_login_url 'google' %}" class="btn btn-rose btn-raised btn-round " data-toggle="dropdown">
+                            <i class='fab fa-google'></i> CONTINUE WITH GOOGLE
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--/.Navbar -->
+    <div class="="container>
+        {% block body_block %}
+        {% endblock %}
+    </div>
+</body>
+</html>
